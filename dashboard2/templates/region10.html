@@ -1,0 +1,114 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<a href = "{% url 'dashboard2' %}" class="btn btn-outline-secondary" role="button">지역 선택 화면으로</a>
+<p style="width:100%">
+</p>
+
+<script>
+window.onload = function() {
+    var colors = Highcharts.getOptions().colors;
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+
+        legend: {
+            symbolWidth: 40
+        },
+
+        title: {
+            text: ''
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: 'mg/L'
+            },
+            accessibility: {
+                description: 'Percentage usage'
+            }
+        },
+
+        xAxis: {
+            title: {
+                text: 'Time'
+            },
+            accessibility: {
+                description: 'Time from December 2010 to September 2019'
+            },
+            categories: ['2009', '2010', '2011', '2012', '2013','2014','2015','2016','2017','2018']
+        },
+
+        plotOptions: {
+            series: {
+                point: {
+                    events: {
+                        click: function () {
+                            window.location.href = this.series.options.website;
+                        }
+                    }
+                },
+                cursor: 'pointer'
+            }
+        },
+
+        series: [
+            {
+                name: '경도',
+                data: [71.69330841,69.62951815,65.06312829,66.00412138,64.40037981,67.92530464,69.34612033,74.36380181,75.71074478,74.00635147],
+                color: colors[0]
+            }, {
+                name: '과망간칼슘소비량',
+                data: [1.220778479,1.613084149,1.800851607,1.731050822,1.37799098,1.323104922,1.407960068,1.50445271,1.796049441,1.662364274],
+                color: colors[1]
+            }, {
+                name: '염소이온',
+                data: [15.39944431,14.49743117,14.43705401,13.54889221,14.08797542,16.75414491,18.20413453,19.59541445,19.79456436,20.80195156],
+                color: colors[9]
+            }, {
+                name: '증발잔류물',
+                data: [112.2901638,110.892771,112.3339236,110.1595002,113.2780239,121.7512792,124.8594839,132.5468783,133.8748155,130.4685853],
+                color: colors[5]
+            }, {
+                name: '황산이온',
+                data: [13.31872712,11.94368043,12.27664201,11.86193364,10.89244079,12.7088015,13.11480562,13.28036663,13.74629717,13.55920567],
+                color: colors[3]
+            }
+        ],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 550
+                },
+                chartOptions: {
+                    chart: {
+                        spacingLeft: 3,
+                        spacingRight: 3
+                    },
+                    legend: {
+                        itemWidth: 150
+                    },
+                    xAxis: {
+                        categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                        title: ''
+                    },
+                    yAxis: {
+                        visible: false
+                    }
+                }
+            }]
+        }
+    });
+}
+</script>
+<section>
+  <h1 align="center">충청북도 수질변화(년)</h1>
+  <h6 align="right">(2009년~2018년)</h6>
+  <div id="container"></div>
+</section>

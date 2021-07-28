@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<a href = "{% url 'dashboard2' %}" class="btn btn-outline-secondary" role="button">지역 선택 화면으로</a>
+<p style="width:100%">
+</p>
+
+<script>
+window.onload = function() {
+    var colors = Highcharts.getOptions().colors;
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+
+        legend: {
+            symbolWidth: 40
+        },
+
+        title: {
+            text: ''
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: 'mg/L'
+            },
+            accessibility: {
+                description: 'Percentage usage'
+            }
+        },
+
+        xAxis: {
+            title: {
+                text: 'Time'
+            },
+            accessibility: {
+                description: 'Time from December 2010 to September 2019'
+            },
+            categories: ['서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시','대전광역시','울산광역시','경기도','강원도','충청북도','충청남도','전라북도','전라남도','경상북도','경상남도','제주도']
+        },
+
+        plotOptions: {
+            series: {
+                point: {
+                    events: {
+                        click: function () {
+                            window.location.href = this.series.options.website;
+                        }
+                    }
+                },
+                cursor: 'pointer'
+            }
+        },
+
+        series: [
+            {
+                name: '경도',
+                data: [62.90128465,88.89041879,78.08084577,65.94927769,28.40486726,62.4375,97.396969,69.45277127,55.04246832,74.00635147,87.3068971,50.85584173,37.56626962,84.72426914,82.74976243,34.27947598],
+                color: colors[0]
+            }, {
+                name: '과망간칼슘소비량',
+                data: [1.015382015,1.723975013,2.33221393,1.964980236,1.35929203,2.235416667,2.046818182,1.612235686,1.461828163,1.662364274,2.014663374,1.5367796,1.86938199,2.543708803,1.544258451,0],
+                color: colors[1]
+            }, {
+                name: '염소이온',
+                data: [22.10547667,33.44800721,30.25603234,21.05007678,9.192920354,17.39583333,40.64530303,21.23154662,15.6186399,20.80195156,36.57816502,16.20540676,11.69018414,18.86522543,38.99933797,14.17365357],
+                color: colors[9]
+            }, {
+                name: '증발잔류물',
+                data: [119.0686275,223.120227,159.9850746,129.268639,51.9247787,89.0625,196.0893939,120.549399,95.76071159,130.4685853,177.8787047,92.03989385,75.46115659,161.5379275,185.6404799,98.11644833],
+                color: colors[5]
+            }, {
+                name: '황산이온',
+                data: [13.14621366,46.8904187,24.92972637,13.73046726,5.274336283,10.66666667,47.75757576,13.9997104,8.138813347,13.55920567,27.96972192,8.706696719,5.69807544,24.03417513,31.96027893,3.829694323],
+                color: colors[3]
+            }
+        ],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 550
+                },
+                chartOptions: {
+                    chart: {
+                        spacingLeft: 3,
+                        spacingRight: 3
+                    },
+                    legend: {
+                        itemWidth: 150
+                    },
+                    xAxis: {
+                        categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                        title: ''
+                    },
+                    yAxis: {
+                        visible: false
+                    }
+                }
+            }]
+        }
+    });
+}
+</script>
+<section>
+  <h1 align="center">2018년 지역별 수질</h1>
+  <h6 align="right">(서울특별시~제주도)</h6>
+  <div id="container"></div>
+</section>

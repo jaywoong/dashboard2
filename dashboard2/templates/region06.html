@@ -1,0 +1,114 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<a href = "{% url 'dashboard2' %}" class="btn btn-outline-secondary" role="button">지역 선택 화면으로</a>
+<p style="width:100%">
+</p>
+
+<script>
+window.onload = function() {
+    var colors = Highcharts.getOptions().colors;
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+
+        legend: {
+            symbolWidth: 40
+        },
+
+        title: {
+            text: ''
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: 'mg/L'
+            },
+            accessibility: {
+                description: 'Percentage usage'
+            }
+        },
+
+        xAxis: {
+            title: {
+                text: 'Time'
+            },
+            accessibility: {
+                description: 'Time from December 2010 to September 2019'
+            },
+            categories: ['2009', '2010', '2011', '2012', '2013','2014','2015','2016','2017','2018']
+        },
+
+        plotOptions: {
+            series: {
+                point: {
+                    events: {
+                        click: function () {
+                            window.location.href = this.series.options.website;
+                        }
+                    }
+                },
+                cursor: 'pointer'
+            }
+        },
+
+        series: [
+            {
+                name: '경도',
+                data: [53.16666667,52.9375,52.54166667,54.8125,54.29166667,57.5625,57.41666667,59.4375,59.14583333,62.4375],
+                color: colors[0]
+            }, {
+                name: '과망간칼슘소비량',
+                data: [1.472916667,2.19375,2.591666667,2.629166667,2.879166667,2.872916667,2.710416667,2.302083333,2.333333333,2.235416667],
+                color: colors[1]
+            }, {
+                name: '염소이온',
+                data: [14.8125,14.58333333,13.54166667,13.1875,14.39583333,16.79166667,18.66666667,20.0625,18.58333333,17.39583333],
+                color: colors[9]
+            }, {
+                name: '증발잔류물',
+                data: [91.02083333,83.75,85.39583333,85.5625,85.33333333,83,84.41666667,89.10416667,91.29166667,89.0625],
+                color: colors[5]
+            }, {
+                name: '황산이온',
+                data: [12.5,12.22916667,10.52083333,10.58333333,10.6875,10.79166667,11.97916667,11.79166667,12.3125,10.66666667],
+                color: colors[3]
+            }
+        ],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 550
+                },
+                chartOptions: {
+                    chart: {
+                        spacingLeft: 3,
+                        spacingRight: 3
+                    },
+                    legend: {
+                        itemWidth: 150
+                    },
+                    xAxis: {
+                        categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                        title: ''
+                    },
+                    yAxis: {
+                        visible: false
+                    }
+                }
+            }]
+        }
+    });
+}
+</script>
+<section>
+  <h1 align="center">대전광역시 수질변화(년)</h1>
+  <h6 align="right">(2009년~2018년)</h6>
+  <div id="container"></div>
+</section>

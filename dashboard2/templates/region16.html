@@ -1,0 +1,114 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<a href = "{% url 'dashboard2' %}" class="btn btn-outline-secondary" role="button">지역 선택 화면으로</a>
+<p style="width:100%">
+</p>
+
+<script>
+window.onload = function() {
+    var colors = Highcharts.getOptions().colors;
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+
+        legend: {
+            symbolWidth: 40
+        },
+
+        title: {
+            text: ''
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: 'mg/L'
+            },
+            accessibility: {
+                description: 'Percentage usage'
+            }
+        },
+
+        xAxis: {
+            title: {
+                text: 'Time'
+            },
+            accessibility: {
+                description: 'Time from December 2010 to September 2019'
+            },
+            categories: ['2009', '2010', '2011', '2012', '2013','2014','2015','2016','2017','2018']
+        },
+
+        plotOptions: {
+            series: {
+                point: {
+                    events: {
+                        click: function () {
+                            window.location.href = this.series.options.website;
+                        }
+                    }
+                },
+                cursor: 'pointer'
+            }
+        },
+
+        series: [
+            {
+                name: '경도',
+                data: [40.78090045,37.02704678,34.7082115,36.74183723,33.96905458,32.28654971,31.39351852,30.7206384,34.01553363,34.27947598],
+                color: colors[0]
+            }, {
+                name: '과망간칼슘소비량',
+                data: [0.117757271,0.040996589,0.020735867,0.031652047,0,0,0,0,0,0],
+                color: colors[1]
+            }, {
+                name: '염소이온',
+                data: [13.57885906,11.11574074,9.851120858,10.28813353,10.06725146,10.63859649,10.21204922,10.75702973,12.57807018,14.17365357],
+                color: colors[9]
+            }, {
+                name: '증발잔류물',
+                data: [94.08235459,86.97624269,84.17556043,85.80908869,85.54349415,90.36805556,88.30665205,90.06262183,92.85745614,98.11644833],
+                color: colors[5]
+            }, {
+                name: '황산이온',
+                data: [3.624021253,2.738669591,3.383650097,3.747076023,2.958211501,3.482577973,3.46795809,3.631335283,3.570723684,3.829694323],
+                color: colors[3]
+            }
+        ],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 550
+                },
+                chartOptions: {
+                    chart: {
+                        spacingLeft: 3,
+                        spacingRight: 3
+                    },
+                    legend: {
+                        itemWidth: 150
+                    },
+                    xAxis: {
+                        categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                        title: ''
+                    },
+                    yAxis: {
+                        visible: false
+                    }
+                }
+            }]
+        }
+    });
+}
+</script>
+<section>
+  <h1 align="center">제주도 수질변화(년)</h1>
+  <h6 align="right">(2009년~2018년)</h6>
+  <div id="container"></div>
+</section>
