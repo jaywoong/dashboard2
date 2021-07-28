@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+
+<script>
+
+</script>
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Stress Awareness</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active"></li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-body">
+                독립변수 : 증발잔류물(기준:500/ 단위:(mg/L)), 알루미늄(기준:0.2/ 단위:(mg/L)), 색도(기준:5/ 단위:(도)), 디브로모아세토니트릴(기준:0.1/ 단위:(mg/L)), 과망간산칼륨소비량(기준:10/ 단위:(mg/L)), 염소이온(기준:250/ 단위:(mg/L)), 불소(기준:1.5/ 단위:(mg/L)), 디브로모클로로메탄(기준:0.1/ 단위:(mg/L))<br>
+                종속변수 : 스트레스인지율_표준화율
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        증발잔류물(기준:500/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter01" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta1.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        알루미늄(기준:0.2/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter02" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta2.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        색도(기준:5/ 단위:(도))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter03" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta3.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        디브로모아세토니트릴(기준:0.1/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter04" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta4.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        과망간산칼륨소비량(기준:10/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter05" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta5.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        염소이온(기준:250/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter06" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta6.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        불소(기준:1.5/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter07" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta7.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        디브로모클로로메탄(기준:0.1/ 단위:(mg/L))
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter08" width="100%" height="500px"></div>
+                        <img src="{% static 'img/sta8.png'%}" width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-area me-1"></i>
+                Prediction Result
+            </div>
+            <div class="card-body">
+                <img src="{% static 'img/stress_awareness.png'%}" width="1000px" alt="">
+                <h2>R-squared : 0.6088644122003146</h2>
+            </div>
+            <div class="card-footer small text-muted"></div>
+        </div>
+
+
+    </div>
+</main>
