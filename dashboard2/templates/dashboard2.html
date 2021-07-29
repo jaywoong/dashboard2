@@ -3,35 +3,43 @@
 
 <body>
 <!--물데이터-->
-
-<h2> ▼ 연도간 수질의 차이 (2009~2018) </h2>
-        <div><a href = "{% url 'region01' %}" class="btn btn-danger btn-block" role="button">서울특별시 연간 변화</a>
-        <a href = "{% url 'region02' %}" class="btn btn-primary" role="button">부산광역시 연간 변화</a>
-        <a href = "{% url 'region03' %}" class="btn btn-success" role="button">대구광역시 연간 변화</a></div>
-        <div><a href = "{% url 'region04' %}" class="btn btn-outline-secondary" role="button">인천광역시 연간 변화</a>
-        <a href = "{% url 'region05' %}" class="btn btn-outline-secondary" role="button">광주광역시 연간 변화</a>
-        <a href = "{% url 'region06' %}" class="btn btn-outline-secondary" role="button">대전광역시 연간 변화</a></div>
-        <div><a href = "{% url 'region07' %}" class="btn btn-outline-secondary" role="button">울산광별시 연간 변화</a>
-        <a href = "{% url 'region08' %}" class="btn btn-outline-secondary" role="button">경기도 연간 변화</a>
-        <a href = "{% url 'region09' %}" class="btn btn-outline-secondary" role="button">강원도 연간 변화</a></div>
-        <div><a href = "{% url 'region10' %}" class="btn btn-outline-secondary" role="button">충청북도 연간 변화</a>
-        <a href = "{% url 'region11' %}" class="btn btn-outline-secondary" role="button">충청남도 연간 변화</a>
-        <a href = "{% url 'region12' %}" class="btn btn-outline-secondary" role="button">전라북도 연간 변화</a></div>
-        <div><a href = "{% url 'region13' %}" class="btn btn-outline-secondary" role="button">전라남도 연간 변화</a>
-        <a href = "{% url 'region14' %}" class="btn btn-outline-secondary" role="button">경상북도 연간 변화</a>
-        <a href = "{% url 'region15' %}" class="btn btn-outline-secondary" role="button">경상남도 연간 변화</a></div>
-        <div><a href = "{% url 'region16' %}" class="btn btn-outline-secondary" role="button">제주도 연간 변화</a></div>
+<div class="card mb-4">
+        <div class="card-body">
+                <h2> ▼ 연도간 수질의 차이 (2009~2018) </h2>
+                <div><a href = "{% url 'region01' %}" class="btn btn-outline-secondary" role="button">서울특별시 연간 변화</a>
+                        <a href = "{% url 'region02' %}" class="btn btn-outline-secondary" role="button">부산광역시 연간 변화</a>
+                        <a href = "{% url 'region03' %}" class="btn btn-outline-secondary" role="button">대구광역시 연간 변화</a>
+                        <a href = "{% url 'region04' %}" class="btn btn-outline-secondary" role="button">인천광역시 연간 변화</a></div>
+                <div><a href = "{% url 'region05' %}" class="btn btn-outline-secondary" role="button">광주광역시 연간 변화</a>
+                        <a href = "{% url 'region06' %}" class="btn btn-outline-secondary" role="button">대전광역시 연간 변화</a>
+                        <a href = "{% url 'region07' %}" class="btn btn-outline-secondary" role="button">울산광별시 연간 변화</a>
+                        <a href = "{% url 'region08' %}" class="btn btn-outline-secondary" role="button">경기도 연간 변화</a></div>
+                <div><a href = "{% url 'region09' %}" class="btn btn-outline-secondary" role="button">강원도 연간 변화</a>
+                        <a href = "{% url 'region10' %}" class="btn btn-outline-secondary" role="button">충청북도 연간 변화</a>
+                        <a href = "{% url 'region11' %}" class="btn btn-outline-secondary" role="button">충청남도 연간 변화</a>
+                        <a href = "{% url 'region12' %}" class="btn btn-outline-secondary" role="button">전라북도 연간 변화</a></div>
+                <div><a href = "{% url 'region13' %}" class="btn btn-outline-secondary" role="button">전라남도 연간 변화</a>
+                        <a href = "{% url 'region14' %}" class="btn btn-outline-secondary" role="button">경상북도 연간 변화</a>
+                        <a href = "{% url 'region15' %}" class="btn btn-outline-secondary" role="button">경상남도 연간 변화</a>
+                        <a href = "{% url 'region16' %}" class="btn btn-outline-secondary" role="button">제주도 연간 변화</a></div>
+        </div>
+</div>
 <p></p><p></p>
-<h2> ▼ 지역간 수질의 차이(2009~2018) </h2>
-        <div><a href = "{% url 'year2009' %}" class="btn btn-danger" role="button">2009년 지역간 차이</a>
-        <a href = "{% url 'year2010' %}" class="btn btn-primary" role="button">2010년 지역간 차이</a>
-        <a href = "{% url 'year2011' %}" class="btn btn-success" role="button">2011년 지역간 차이</a></div>
-        <div><a href = "{% url 'year2012' %}" class="btn btn-outline-secondary" role="button">2012년 지역간 차이</a>
-        <a href = "{% url 'year2013' %}" class="btn btn-outline-secondary" role="button">2013년 지역간 차이</a>
-        <a href = "{% url 'year2014' %}" class="btn btn-outline-secondary" role="button">2014년 지역간 차이</a></div>
-        <div><a href = "{% url 'year2015' %}" class="btn btn-outline-secondary" role="button">2015년 지역간 차이</a>
-        <a href = "{% url 'year2016' %}" class="btn btn-outline-secondary" role="button">2016년 지역간 차이</a>
-        <a href = "{% url 'year2017' %}" class="btn btn-outline-secondary" role="button">2017년 지역간 차이</a></div>
-        <div><a href = "{% url 'year2018' %}" class="btn btn-outline-secondary" role="button">2018년 지역간 차이</a></div>
+<div class="card mb-4">
+        <div class="card-body">
+                <h2> ▼ 지역간 수질의 차이(2009~2018) </h2>
+                <div><a href = "{% url 'year2009' %}" class="btn btn-outline-secondary" role="button">2009년 지역간 차이</a>
+                        <a href = "{% url 'year2010' %}" class="btn btn-outline-secondary" role="button">2010년 지역간 차이</a>
+                        <a href = "{% url 'year2011' %}" class="btn btn-outline-secondary" role="button">2011년 지역간 차이</a>
+                        <a href = "{% url 'year2012' %}" class="btn btn-outline-secondary" role="button">2012년 지역간 차이</a>
+                        <a href = "{% url 'year2013' %}" class="btn btn-outline-secondary" role="button">2013년 지역간 차이</a></div>
+                <div><a href = "{% url 'year2014' %}" class="btn btn-outline-secondary" role="button">2014년 지역간 차이</a>
+                        <a href = "{% url 'year2015' %}" class="btn btn-outline-secondary" role="button">2015년 지역간 차이</a>
+                        <a href = "{% url 'year2016' %}" class="btn btn-outline-secondary" role="button">2016년 지역간 차이</a>
+                        <a href = "{% url 'year2017' %}" class="btn btn-outline-secondary" role="button">2017년 지역간 차이</a>
+                        <a href = "{% url 'year2018' %}" class="btn btn-outline-secondary" role="button">2018년 지역간 차이</a></div>
+        </div>
+</div>
+
 </body>
 </html>
