@@ -7,11 +7,13 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Multi Linear Regression</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item active">다중회귀분석</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">
-
+                <h3>상수도 수질이 지역사회 건강에 미치는 영향</h3><br>
+                독립변수 : 지역별 상수도 수질 데이터<br>
+                종속변수 : 지역사회 건강 결과 및 건강결정요인
             </div>
         </div>
         <div class="row">
@@ -19,10 +21,46 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot01
+                        Stress Awareness
                     </div>
                     <div class="card-body">
                         <div id="scatter01" width="100%" height="600px"></div>
+                        <img src="{% static 'img/stress_awareness.png'%}" width="600px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        Stress Counselling
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter02" width="100%" height="40"></div>
+                        <img src="{% static 'img/stress_counselling.png'%}" width="600px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        Oral Health
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter03" width="100%" height="40"></div>
+                        <img src="{% static 'img/oral_health.png'%}" width="600px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        Depression
+                    </div>
+                    <div class="card-body">
+                        <div id="scatter04" width="100%" height="40"></div>
                         <img src="{% static 'img/depression.png'%}" width="600px" alt="">
                     </div>
                 </div>
@@ -31,57 +69,15 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot02
-                    </div>
-                    <div class="card-body">
-                        <div id="scatter02" width="100%" height="40"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot03
-                    </div>
-                    <div class="card-body">
-                        <div id="scatter03" width="100%" height="40"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot04
-                    </div>
-                    <div class="card-body">
-                        <div id="scatter04" width="100%" height="40"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot05
+                        Depression Counselling
                     </div>
                     <div class="card-body">
                         <div id="scatter05" width="100%" height="40"></div>
+                        <img src="{% static 'img/depression_counselling.png'%}" width="600px" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        Scatter Plot06
-                    </div>
-                    <div class="card-body">
-                        <div id="scatter06" width="100%" height="40"></div>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
     </div>
